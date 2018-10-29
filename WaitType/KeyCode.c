@@ -56,7 +56,7 @@ CGKeyCode keyCodeForChar(const unsigned char c)
         
         
         /* Loop through every keycode (0 - 127) to find its current mapping. */
-        for (i = 0; i < 512; ++i) {
+        for (i = 0; i < 128; ++i) {
             CFStringRef string = createStringForKey((CGKeyCode)i);
             if (string != NULL) {
                 CFDictionaryAddValue(charToCodeDict, string, (const void *)i);
