@@ -9,5 +9,5 @@
 #include <CoreFoundation/CoreFoundation.h>
 #include <Carbon/Carbon.h> /* For kVK_ constants, and TIS functions. */
 
-CGKeyCode keyCodeForChar(const char c);
-const char char_tolower(const char c);
+CGKeyCode keyCodeForChar(const unsigned char c);
+

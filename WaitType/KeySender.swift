@@ -5,6 +5,9 @@
 //  Created by Andrian Budantsov on 10/27/18.
 //  Copyright © 2018 Andrian Budantsov. All rights reserved.
 //
+//  Use of this source code is governed by MIT license
+//  that can be found in the LICENSE file.
+//
 
 import Foundation
 
@@ -73,6 +76,22 @@ struct KeySender {
         }
     }
     
+    private func keyLower(_ k : UInt8) -> UInt8 {
+        if k >= UInt8.init(ascii: "A") && k <= UInt8.init(ascii: "Z") {
+            return k + 32
+        }
+        let nd : [UInt8] = Array("`0123456789,./[]".utf8)
+        let ns : [UInt8] = Array("~)!@#$%^&*(<>?{}".utf8)
+        
+        
+        if let idx = ns.firstIndex(where: { $0 == k }) {
+            return nd[idx]
+        }
+        
+        return k
+    }
+    
+    
     private func sendKeystoke(key : String) {
         guard let c = key.first, let uc = c.unicodeScalars.first else {
             return
@@ -83,8 +102,8 @@ struct KeySender {
             return
         }
         
-        let ch = Int8(uc.value)
-        let lch = char_tolower(ch)
+        let ch = UInt8(uc.value)
+        let lch = keyLower(ch)
         let pressShift = ch != lch;
         let code = keyCodeForChar(lch)
         
