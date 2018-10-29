@@ -9,7 +9,7 @@ For example:
 
 Introducing WaitType: simple Mac app that simulates key press buttons from some string that you have pasted in its text field. 
 
-![screenshot](https://raw.githubusercontent.com/AndrianBdn/waittype/Screenshot/ScreenShot20181029.png)
+![screenshot](https://raw.githubusercontent.com/AndrianBdn/waittype/master/Screenshot/ScreenShot20181029.png)
 
 ## Motivation 
 
