@@ -14,6 +14,8 @@
 		009C0C6B2181DE5200D5A1AB /* KeyCode.c in Sources */ = {isa = PBXBuildFile; fileRef = 009C0C6A2181DE5200D5A1AB /* KeyCode.c */; };
 		009C0C6D21844A1000D5A1AB /* PaddedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 009C0C6C21844A1000D5A1AB /* PaddedTextField.swift */; };
 		009C0C6F21844A9500D5A1AB /* KeySender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 009C0C6E21844A9500D5A1AB /* KeySender.swift */; };
+		009C0C71218621AE00D5A1AB /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 009C0C70218621AE00D5A1AB /* Credits.rtf */; };
+		009C0C7321871E5E00D5A1AB /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 009C0C7221871E5E00D5A1AB /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +31,8 @@
 		009C0C6A2181DE5200D5A1AB /* KeyCode.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = KeyCode.c; sourceTree = "<group>"; };
 		009C0C6C21844A1000D5A1AB /* PaddedTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddedTextField.swift; sourceTree = "<group>"; };
 		009C0C6E21844A9500D5A1AB /* KeySender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeySender.swift; sourceTree = "<group>"; };
+		009C0C70218621AE00D5A1AB /* Credits.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = Credits.rtf; sourceTree = "<group>"; };
+		009C0C7221871E5E00D5A1AB /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +49,7 @@
 		009C0C4A2180D66600D5A1AB = {
 			isa = PBXGroup;
 			children = (
+				009C0C7221871E5E00D5A1AB /* README.md */,
 				009C0C552180D66600D5A1AB /* WaitType */,
 				009C0C542180D66600D5A1AB /* Products */,
 			);
@@ -72,6 +77,7 @@
 				009C0C5D2180D66800D5A1AB /* Info.plist */,
 				009C0C5E2180D66800D5A1AB /* WaitType.entitlements */,
 				009C0C682181DE5200D5A1AB /* WaitType-Bridging-Header.h */,
+				009C0C70218621AE00D5A1AB /* Credits.rtf */,
 			);
 			path = WaitType;
 			sourceTree = "<group>";
@@ -136,6 +142,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				009C0C592180D66800D5A1AB /* Assets.xcassets in Resources */,
+				009C0C71218621AE00D5A1AB /* Credits.rtf in Resources */,
+				009C0C7321871E5E00D5A1AB /* README.md in Resources */,
 				009C0C5C2180D66800D5A1AB /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -298,6 +306,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				PRODUCT_BUNDLE_IDENTIFIER = io.andrian.WaitType;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "WaitType/WaitType-Bridging-Header.h";
@@ -320,6 +329,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				PRODUCT_BUNDLE_IDENTIFIER = io.andrian.WaitType;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "WaitType/WaitType-Bridging-Header.h";

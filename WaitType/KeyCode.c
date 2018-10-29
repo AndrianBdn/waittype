@@ -36,7 +36,7 @@ CFStringRef createStringForKey(CGKeyCode keyCode)
 
 /* Returns key code for given character via the above function, or UINT16_MAX
  * on error. */
-CGKeyCode keyCodeForChar(const char c)
+CGKeyCode keyCodeForChar(const unsigned char c)
 {
     static CFMutableDictionaryRef charToCodeDict;
     CGKeyCode code;
@@ -56,7 +56,7 @@ CGKeyCode keyCodeForChar(const char c)
         
         
         /* Loop through every keycode (0 - 127) to find its current mapping. */
-        for (i = 0; i < 128; ++i) {
+        for (i = 0; i < 512; ++i) {
             CFStringRef string = createStringForKey((CGKeyCode)i);
             if (string != NULL) {
                 CFDictionaryAddValue(charToCodeDict, string, (const void *)i);
@@ -81,8 +81,4 @@ CGKeyCode keyCodeForChar(const char c)
     CFRelease(charStr);
     
     return code;
-}
-
-const char char_tolower(const char c) {
-    return tolower(c);
 }

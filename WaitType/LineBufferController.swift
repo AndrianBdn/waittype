@@ -5,6 +5,10 @@
 //  Created by Andrian Budantsov on 10/25/18.
 //  Copyright © 2018 Andrian Budantsov. All rights reserved.
 //
+//  Use of this source code is governed by MIT license
+//  that can be found in the LICENSE file.
+//
+
 
 import Cocoa
 
