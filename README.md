@@ -15,7 +15,7 @@ Introducing WaitType: simple Mac app that simulates key press buttons from some 
 
 I used to use [this Python / AppleScript](https://gist.github.com/AndrianBdn/69484820345740156a78059d0219ee0f) to do that, but since macOS Mojave it requires Terminal.app to be added to **Accessibility** section of **Security & Privacy**. 
 
-To avoid this a created a simple separate app specifically for this function. You still have to add it to **Accessibility** section of **Security & Privacy**, but unlike Terminal it does not run arbirary code all the time. 
+To avoid this a created a simple separate app specifically for this function. You still have to add it to **Accessibility** section of **Security & Privacy**, but unlike Terminal it does not run arbitrary code all the time. 
 
 In fact the source code of the app is super easy to audit and its entitlements does not allow it using network or reading files. 
 
