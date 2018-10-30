@@ -33,9 +33,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         }, enablePrompt: {
             self.textField.isEnabled = $0
         })
+        
     }
     
     @IBAction func textFieldAction(sender: NSTextField) {
+        keySender.refreshIfNeeded()
         keySender.sendText(text: sender.stringValue)
     }
     
