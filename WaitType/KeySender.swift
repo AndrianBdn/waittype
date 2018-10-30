@@ -14,33 +14,37 @@ import Foundation
 typealias PromptSetter = (String) -> Void
 typealias PromptEnabler = (Bool) -> Void
 
-// syntax suger for shift flag
-extension CGEvent {
-    var shift : Bool {
-        get {
-            return self.flags.contains(.maskShift)
-        }
-        set {
-            if (newValue) {
-                self.flags.insert(.maskShift)
-            } else {
-                self.flags.remove(.maskShift)
-            }
-        }
-    }
-}
-
 struct KeySender {
     
     let log : LineBufferController
     let setPrompt : PromptSetter
     let enablePrompt : PromptEnabler
+    var mapper = KeyMapper()
+    
+    init(log : LineBufferController, setPrompt : @escaping PromptSetter, enablePrompt : @escaping PromptEnabler) {
+        self.log = log
+        self.setPrompt = setPrompt
+        self.enablePrompt = enablePrompt
+    }
+    
+    mutating func refreshIfNeeded() {
+        if mapper.hasASCII == false {
+            mapper.refresh()
+        }
+    }
     
     public func sendText(text : String) {
         
         if text == "" {
             return
         }
+        
+        if mapper.hasASCII == false {
+            log.print(ln: "Current keyboard layout does not have English letters")
+            log.print(ln: "Won't be able to type anything...")
+            return
+        }
+        
         setPrompt("typing in progress")
         enablePrompt(false)
         log.clear()
@@ -75,23 +79,7 @@ struct KeySender {
             self.enablePrompt(true)
         }
     }
-    
-    private func keyLower(_ k : UInt8) -> UInt8 {
-        if k >= UInt8.init(ascii: "A") && k <= UInt8.init(ascii: "Z") {
-            return k + 32
-        }
-        let nd : [UInt8] = Array("`0123456789,./[]".utf8)
-        let ns : [UInt8] = Array("~)!@#$%^&*(<>?{}".utf8)
-        
-        
-        if let idx = ns.firstIndex(where: { $0 == k }) {
-            return nd[idx]
-        }
-        
-        return k
-    }
-    
-    
+   
     private func sendKeystoke(key : String) {
         guard let c = key.first, let uc = c.unicodeScalars.first else {
             return
@@ -101,21 +89,35 @@ struct KeySender {
             log.print(ln: "Skipping Non-ASCII symbol \(key)")
             return
         }
-        
-        let ch = UInt8(uc.value)
-        let lch = keyLower(ch)
-        let pressShift = ch != lch;
-        let code = keyCodeForChar(lch)
-        
-        if code == UInt16.max {
+
+        if let press = self.mapper.keyPress(UInt8(uc.value)) {
+            press.perform()
+        }
+        else {
             log.print(ln: "Don't know how to simulate press of \(key)")
             return
         }
-        
-        self.press(code, shift: pressShift)
     }
-    
-    private func press(_ code : CGKeyCode, shift : Bool) {
+}
+
+// syntax suger for shift flag
+extension CGEvent {
+    var shift : Bool {
+        get {
+            return self.flags.contains(.maskShift)
+        }
+        set {
+            if (newValue) {
+                self.flags.insert(.maskShift)
+            } else {
+                self.flags.remove(.maskShift)
+            }
+        }
+    }
+}
+
+extension KeyPress {
+    func perform() {
         let keydown = CGEvent.init(keyboardEventSource: nil, virtualKey: code, keyDown: true)!
         let keyup = CGEvent.init(keyboardEventSource: nil, virtualKey: code, keyDown: false)!
         keyup.shift = shift

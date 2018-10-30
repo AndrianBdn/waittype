@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		003FDF2021888A4F009A26E5 /* KeyMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003FDF1F21888A4F009A26E5 /* KeyMapper.swift */; };
 		009C0C572180D66600D5A1AB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 009C0C562180D66600D5A1AB /* AppDelegate.swift */; };
 		009C0C592180D66800D5A1AB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 009C0C582180D66800D5A1AB /* Assets.xcassets */; };
 		009C0C5C2180D66800D5A1AB /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 009C0C5A2180D66800D5A1AB /* MainMenu.xib */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		003FDF1F21888A4F009A26E5 /* KeyMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyMapper.swift; sourceTree = "<group>"; };
 		009C0C532180D66600D5A1AB /* WaitType.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WaitType.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		009C0C562180D66600D5A1AB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		009C0C582180D66800D5A1AB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -68,6 +70,7 @@
 			children = (
 				009C0C562180D66600D5A1AB /* AppDelegate.swift */,
 				009C0C6E21844A9500D5A1AB /* KeySender.swift */,
+				003FDF1F21888A4F009A26E5 /* KeyMapper.swift */,
 				009C0C692181DE5200D5A1AB /* KeyCode.h */,
 				009C0C6A2181DE5200D5A1AB /* KeyCode.c */,
 				009C0C662181CCDC00D5A1AB /* LineBufferController.swift */,
@@ -159,6 +162,7 @@
 				009C0C6F21844A9500D5A1AB /* KeySender.swift in Sources */,
 				009C0C672181CCDC00D5A1AB /* LineBufferController.swift in Sources */,
 				009C0C6B2181DE5200D5A1AB /* KeyCode.c in Sources */,
+				003FDF2021888A4F009A26E5 /* KeyMapper.swift in Sources */,
 				009C0C6D21844A1000D5A1AB /* PaddedTextField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -300,7 +304,8 @@
 				CODE_SIGN_ENTITLEMENTS = WaitType/WaitType.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = 3JPX88AG28;
+				DEVELOPMENT_TEAM = FA8DPD7WRW;
+				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = WaitType/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -323,7 +328,8 @@
 				CODE_SIGN_ENTITLEMENTS = WaitType/WaitType.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = 3JPX88AG28;
+				DEVELOPMENT_TEAM = FA8DPD7WRW;
+				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = WaitType/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
