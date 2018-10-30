@@ -1,5 +1,5 @@
 // Copy-pasted from https://stackoverflow.com/questions/1918841/how-to-convert-ascii-character-to-cgkeycode
-// and then removed
+// and then removed some unneeded stuff 
 #import "KeyCode.h"
 
 
