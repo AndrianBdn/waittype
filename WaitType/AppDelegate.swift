@@ -15,15 +15,36 @@ import Cocoa
 class AppDelegate: NSObject, NSApplicationDelegate {
 
     @IBOutlet weak var window: NSWindow!
-    @IBOutlet weak var textField : NSTextField!
+    @IBOutlet weak var secureTextField : NSTextField!
+    @IBOutlet weak var unsecureTextField : NSTextField!
+    
+    
+    var textField : OptionalSecurityTextFieldManager!
     @IBOutlet weak var textLog : NSTextField!
+    @IBOutlet weak var secureMenu : NSMenuItem! 
 
     var log : LineBufferController!
     var keySender : KeySender!
+    let secureEntrySettingKey = "secureEntry"
 
+    var secureEntry : Bool = false {
+        didSet {
+            guard oldValue != secureEntry else { return } 
+            
+            textField.secure = secureEntry
+            secureMenu.state = secureEntry ? .on : .off
+            keySender.secure = secureEntry
+        }
+    }
     
     func applicationDidFinishLaunching(_ aNotification: Notification) {
-        textField.focusRingType = .none
+        secureTextField.focusRingType = .none
+        unsecureTextField.focusRingType = .none
+        secureTextField.frame = unsecureTextField.frame
+        
+        textField = OptionalSecurityTextFieldManager.init(unsecure: unsecureTextField, secure: secureTextField)
+
+        
         window.styleMask.remove(.resizable)
         log = LineBufferController(maxLines: 7, textField: textLog)
         log.print(ln: "Paste text in the field and press Enter")
@@ -34,6 +55,13 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             self.textField.isEnabled = $0
         })
         
+        self.secureEntry = UserDefaults.standard.bool(forKey: secureEntrySettingKey)
+
+    }
+    
+    @IBAction func secureEntryToggle(sender : NSMenuItem) {
+        self.secureEntry = !self.secureEntry
+        UserDefaults.standard.set(self.secureEntry, forKey: secureEntrySettingKey)
     }
     
     @IBAction func textFieldAction(sender: NSTextField) {

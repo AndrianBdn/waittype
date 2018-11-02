@@ -20,6 +20,7 @@ struct KeySender {
     let setPrompt : PromptSetter
     let enablePrompt : PromptEnabler
     var mapper = KeyMapper()
+    var secure : Bool = false
     
     init(log : LineBufferController, setPrompt : @escaping PromptSetter, enablePrompt : @escaping PromptEnabler) {
         self.log = log
@@ -66,7 +67,12 @@ struct KeySender {
             m.asyncAfter(deadline: DispatchTime.now() + afterTime) {
                 let idx = text.index(text.startIndex, offsetBy: i)
                 let key = text[idx]
-                self.log.print(ln: "type \(key)")
+                if self.secure {
+                    self.log.print(ln: "type •")
+                }
+                else {
+                    self.log.print(ln: "type \(key)")
+                }
                 self.sendKeystoke(key: "\(key)")
             }
         }

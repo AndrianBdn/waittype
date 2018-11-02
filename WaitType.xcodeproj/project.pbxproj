@@ -13,10 +13,10 @@
 		009C0C5C2180D66800D5A1AB /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 009C0C5A2180D66800D5A1AB /* MainMenu.xib */; };
 		009C0C672181CCDC00D5A1AB /* LineBufferController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 009C0C662181CCDC00D5A1AB /* LineBufferController.swift */; };
 		009C0C6B2181DE5200D5A1AB /* KeyCode.c in Sources */ = {isa = PBXBuildFile; fileRef = 009C0C6A2181DE5200D5A1AB /* KeyCode.c */; };
-		009C0C6D21844A1000D5A1AB /* PaddedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 009C0C6C21844A1000D5A1AB /* PaddedTextField.swift */; };
 		009C0C6F21844A9500D5A1AB /* KeySender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 009C0C6E21844A9500D5A1AB /* KeySender.swift */; };
 		009C0C71218621AE00D5A1AB /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 009C0C70218621AE00D5A1AB /* Credits.rtf */; };
 		009C0C7321871E5E00D5A1AB /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 009C0C7221871E5E00D5A1AB /* README.md */; };
+		00AB4C73218B4F5F00C2F06A /* OptionalSecurityTextFieldManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00AB4C72218B4F5F00C2F06A /* OptionalSecurityTextFieldManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,10 +31,10 @@
 		009C0C682181DE5200D5A1AB /* WaitType-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WaitType-Bridging-Header.h"; sourceTree = "<group>"; };
 		009C0C692181DE5200D5A1AB /* KeyCode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KeyCode.h; sourceTree = "<group>"; };
 		009C0C6A2181DE5200D5A1AB /* KeyCode.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = KeyCode.c; sourceTree = "<group>"; };
-		009C0C6C21844A1000D5A1AB /* PaddedTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddedTextField.swift; sourceTree = "<group>"; };
 		009C0C6E21844A9500D5A1AB /* KeySender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeySender.swift; sourceTree = "<group>"; };
 		009C0C70218621AE00D5A1AB /* Credits.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = Credits.rtf; sourceTree = "<group>"; };
 		009C0C7221871E5E00D5A1AB /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		00AB4C72218B4F5F00C2F06A /* OptionalSecurityTextFieldManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionalSecurityTextFieldManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +69,7 @@
 			isa = PBXGroup;
 			children = (
 				009C0C562180D66600D5A1AB /* AppDelegate.swift */,
+				00AB4C72218B4F5F00C2F06A /* OptionalSecurityTextFieldManager.swift */,
 				009C0C6E21844A9500D5A1AB /* KeySender.swift */,
 				003FDF1F21888A4F009A26E5 /* KeyMapper.swift */,
 				009C0C692181DE5200D5A1AB /* KeyCode.h */,
@@ -76,7 +77,6 @@
 				009C0C662181CCDC00D5A1AB /* LineBufferController.swift */,
 				009C0C582180D66800D5A1AB /* Assets.xcassets */,
 				009C0C5A2180D66800D5A1AB /* MainMenu.xib */,
-				009C0C6C21844A1000D5A1AB /* PaddedTextField.swift */,
 				009C0C5D2180D66800D5A1AB /* Info.plist */,
 				009C0C5E2180D66800D5A1AB /* WaitType.entitlements */,
 				009C0C682181DE5200D5A1AB /* WaitType-Bridging-Header.h */,
@@ -163,7 +163,7 @@
 				009C0C672181CCDC00D5A1AB /* LineBufferController.swift in Sources */,
 				009C0C6B2181DE5200D5A1AB /* KeyCode.c in Sources */,
 				003FDF2021888A4F009A26E5 /* KeyMapper.swift in Sources */,
-				009C0C6D21844A1000D5A1AB /* PaddedTextField.swift in Sources */,
+				00AB4C73218B4F5F00C2F06A /* OptionalSecurityTextFieldManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
