@@ -17,9 +17,7 @@ I used to use [this Python / AppleScript](https://gist.github.com/AndrianBdn/694
 
 To avoid this a created a simple separate app specifically for this function. You still have to add it to **Accessibility** section of **Security & Privacy**, but unlike Terminal it does not run arbitrary code all the time. 
 
-In fact the source code of the app is super easy to audit and its entitlements does not allow it using network or reading files. 
+![screenshot](https://raw.githubusercontent.com/AndrianBdn/waittype/master/Screenshots/SysPref.png)
 
+In fact the source code of the app is easy to audit and its entitlements does not allow using network or reading files. 
 
-## Limitations 
-
-Currently the app expects to work in US keyboard layout only. Feel free to PR the fix. 
