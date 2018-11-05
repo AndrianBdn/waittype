@@ -3,7 +3,7 @@
 Ever needed to type some complicated string (password) somewhere where just pasting doesn't work? 
 
 For example:
-- VirtualBox or VMWare window (sure, it supports copy-paste, but what if it is running some obscure OS or you just need to type serial)
+- VirtualBox or VMWare window (sure, it supports copy-paste, but what if it is running some obscure OS or mode when Cmd/Ctrl-V does not work)
 - VNC or RDP client, like typing password in VNC client for logging-in on Mac
 - or just some text field where paste function was disabled for whatever reason 
 
@@ -19,5 +19,8 @@ To avoid this a created a simple separate app specifically for this function. Yo
 
 ![screenshot](https://raw.githubusercontent.com/AndrianBdn/waittype/master/Screenshots/SysPref.png)
 
-In fact the source code of the app is easy to audit and its entitlements does not allow using network or reading files. 
+In fact the source code of the app is easy to audit. The app is not using network or reading user files. Unfortunately it cannot be sandboxed, since it is using CGEventPost API. 
 
+## Compatibility 
+
+I've tested the app on Mac OS X 10.10 and macOS 10.14. It uses pretty minimal system API, so perhaps it could be ported to earlier versions (although not too early, because of Swift).
