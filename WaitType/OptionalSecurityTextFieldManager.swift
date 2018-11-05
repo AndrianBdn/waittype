@@ -11,12 +11,12 @@
 
 import Cocoa
 
-class OptionalSecurityTextFieldManager  {
+class OptionalSecurityTextFieldManager {
 
-    private let unsecureField : NSTextField
-    private let secureField : NSTextField
-    
-    var secure : Bool = false {
+    private let unsecureField: NSTextField
+    private let secureField: NSTextField
+
+    var secure: Bool = false {
         didSet {
             self.current.isHidden = false
             self.other.isHidden = true
@@ -24,39 +24,36 @@ class OptionalSecurityTextFieldManager  {
             self.current.becomeFirstResponder()
         }
     }
-    
-    private var current : NSTextField {
+
+    private var current: NSTextField {
         if secure {
             return secureField
-        }
-        else {
+        } else {
             return unsecureField
         }
     }
-    
-    
-    private var other : NSTextField {
+
+    private var other: NSTextField {
         if secure {
             return unsecureField
-        }
-        else {
+        } else {
             return secureField
         }
     }
-    
-    var stringValue : String = "" {
+
+    var stringValue: String = "" {
         didSet {
             self.current.stringValue = stringValue
         }
     }
-    
-    var isEnabled : Bool = true {
+
+    var isEnabled: Bool = true {
         didSet {
             self.current.isEnabled = isEnabled
         }
     }
-    
-    init(unsecure : NSTextField, secure : NSTextField) {
+
+    init(unsecure: NSTextField, secure: NSTextField) {
         self.unsecureField = unsecure
         self.secureField = secure
         self.secureField.frame = self.unsecureField.frame
@@ -64,37 +61,38 @@ class OptionalSecurityTextFieldManager  {
             self.secure = false // to call secure.didSet 
         }
     }
-    
-    private static func copyFieldProperties(old: NSTextField, new : NSTextField) {
+
+    private static func copyFieldProperties(old: NSTextField, new: NSTextField) {
         new.stringValue = old.stringValue
         new.isEnabled = old.isEnabled
         new.placeholderString = old.placeholderString
     }
-    
-    
-    
-    
+
 }
 
+private func leftPad(rect: CGRect, pad: CGFloat) -> CGRect {
+    return NSRect(x: rect.origin.x + pad,
+                  y: rect.origin.y,
+                  width: rect.size.width - pad,
+                  height: rect.size.height)
+}
 
 class PaddedTextField: NSTextFieldCell {
-    
+
     @IBInspectable var leftPadding: CGFloat = 10.0
-    
+
     override func drawingRect(forBounds rect: NSRect) -> NSRect {
-        let rectInset = NSMakeRect(rect.origin.x + leftPadding, rect.origin.y, rect.size.width - leftPadding, rect.size.height)
-        return super.drawingRect(forBounds: rectInset)
+        return super.drawingRect(forBounds: leftPad(rect: rect, pad: leftPadding))
     }
-    
+
 }
 
 class PaddedSecureTextField: NSSecureTextFieldCell {
-    
+
     @IBInspectable var leftPadding: CGFloat = 10.0
-    
+
     override func drawingRect(forBounds rect: NSRect) -> NSRect {
-        let rectInset = NSMakeRect(rect.origin.x + leftPadding, rect.origin.y, rect.size.width - leftPadding, rect.size.height)
-        return super.drawingRect(forBounds: rectInset)
+        return super.drawingRect(forBounds: leftPad(rect: rect, pad: leftPadding))
     }
-    
+
 }

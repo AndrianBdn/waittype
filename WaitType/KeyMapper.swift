@@ -13,33 +13,32 @@
 import Foundation
 
 struct KeyPress {
-    let shift : Bool
-    let code : CGKeyCode
+    let shift: Bool
+    let code: CGKeyCode
 }
 
 struct KeyMapper {
-    
-    var keyToString : [String:KeyPress] = KeyMapper.fillTable()
-    
-    var hasASCII : Bool {
+
+    var keyToString: [String: KeyPress] = KeyMapper.fillTable()
+
+    var hasASCII: Bool {
         return keyToString["a"] != nil
     }
-    
+
     mutating public func refresh() {
         keyToString = KeyMapper.fillTable()
     }
-    
-    public func keyPress(_ ascii : UInt8) -> KeyPress? {
+
+    public func keyPress(_ ascii: UInt8) -> KeyPress? {
         guard let str = String(bytes: [ascii], encoding: .ascii) else {
             return nil
         }
         return keyToString[str]
     }
-    
-    private static func fillTable() -> [String:KeyPress] {
-        var t : [String:KeyPress] = [:]
-        
-        
+
+    private static func fillTable() -> [String: KeyPress] {
+        var t: [String: KeyPress] = [:]
+
         for shift in [false, true] {
             for i in 0..<128 {
                 let k = CGKeyCode.init(i)
@@ -51,8 +50,8 @@ struct KeyMapper {
                 }
             }
         }
-        
+
         return t
     }
-    
+
 }

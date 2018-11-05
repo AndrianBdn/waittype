@@ -1,0 +1,4 @@
+included: 
+  - WaitType 
+disabled_rules:
+  - identifier_name 
