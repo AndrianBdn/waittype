@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		003FDF2021888A4F009A26E5 /* KeyMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003FDF1F21888A4F009A26E5 /* KeyMapper.swift */; };
+		0093CE2C22F055B9003AA246 /* CopyPasteNSApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0093CE2B22F055B9003AA246 /* CopyPasteNSApplication.swift */; };
 		009C0C572180D66600D5A1AB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 009C0C562180D66600D5A1AB /* AppDelegate.swift */; };
 		009C0C592180D66800D5A1AB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 009C0C582180D66800D5A1AB /* Assets.xcassets */; };
 		009C0C5C2180D66800D5A1AB /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 009C0C5A2180D66800D5A1AB /* MainMenu.xib */; };
@@ -21,6 +22,7 @@
 
 /* Begin PBXFileReference section */
 		003FDF1F21888A4F009A26E5 /* KeyMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyMapper.swift; sourceTree = "<group>"; };
+		0093CE2B22F055B9003AA246 /* CopyPasteNSApplication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CopyPasteNSApplication.swift; path = ../../../../../../System/Volumes/Data/Users/a/Source/Mac/WaitType/WaitType/CopyPasteNSApplication.swift; sourceTree = "<group>"; };
 		009C0C532180D66600D5A1AB /* WaitType.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WaitType.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		009C0C562180D66600D5A1AB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		009C0C582180D66800D5A1AB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -69,6 +71,7 @@
 			isa = PBXGroup;
 			children = (
 				009C0C562180D66600D5A1AB /* AppDelegate.swift */,
+				0093CE2B22F055B9003AA246 /* CopyPasteNSApplication.swift */,
 				00AB4C72218B4F5F00C2F06A /* OptionalSecurityTextFieldManager.swift */,
 				009C0C6E21844A9500D5A1AB /* KeySender.swift */,
 				003FDF1F21888A4F009A26E5 /* KeyMapper.swift */,
@@ -118,7 +121,7 @@
 				TargetAttributes = {
 					009C0C522180D66600D5A1AB = {
 						CreatedOnToolsVersion = 10.0;
-						LastSwiftMigration = 1000;
+						LastSwiftMigration = 1030;
 						SystemCapabilities = {
 							com.apple.Sandbox = {
 								enabled = 0;
@@ -188,6 +191,7 @@
 				009C0C572180D66600D5A1AB /* AppDelegate.swift in Sources */,
 				009C0C6F21844A9500D5A1AB /* KeySender.swift in Sources */,
 				009C0C672181CCDC00D5A1AB /* LineBufferController.swift in Sources */,
+				0093CE2C22F055B9003AA246 /* CopyPasteNSApplication.swift in Sources */,
 				009C0C6B2181DE5200D5A1AB /* KeyCode.c in Sources */,
 				003FDF2021888A4F009A26E5 /* KeyMapper.swift in Sources */,
 				00AB4C73218B4F5F00C2F06A /* OptionalSecurityTextFieldManager.swift in Sources */,
@@ -342,7 +346,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "WaitType/WaitType-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -364,7 +368,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = io.andrian.WaitType;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "WaitType/WaitType-Bridging-Header.h";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};

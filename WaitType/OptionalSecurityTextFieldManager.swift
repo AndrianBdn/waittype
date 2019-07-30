@@ -54,12 +54,12 @@ class OptionalSecurityTextFieldManager {
     }
 
     init(unsecure: NSTextField, secure: NSTextField) {
+        defer {
+            self.secure = false // to call secure.didSet
+        }
         self.unsecureField = unsecure
         self.secureField = secure
         self.secureField.frame = self.unsecureField.frame
-        defer {
-            self.secure = false // to call secure.didSet 
-        }
     }
 
     private static func copyFieldProperties(old: NSTextField, new: NSTextField) {
